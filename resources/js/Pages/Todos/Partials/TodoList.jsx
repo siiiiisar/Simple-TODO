@@ -1,4 +1,4 @@
-import { Head, useForm } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import NewTodoRecord from "./NewTodoRecord";
 import TodoListHeader from "./TodoListHeader";
 import TodoListRecord from "./TodoListRecord";
@@ -37,8 +37,7 @@ export default function TodoList({todo}){
   }
 
   return(
-    <>
-      <Head title="Welcome" />
+    <>      
       <form onSubmit={handleSubmit}>
         <table className="table-auto w-full text-left whitespace-no-wrap">
           <TodoListHeader/>
@@ -52,8 +51,7 @@ export default function TodoList({todo}){
             todo.map((element) => (              
               <TodoListRecord 
               key={element.id} 
-              element={element} 
-              setOpen={setOpen}
+              element={element}               
               onClick={handleRecordClick}
               />      
             ))
